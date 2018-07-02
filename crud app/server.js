@@ -16,4 +16,6 @@ app.put('/increase', countController.increaseCount)
 //   res.sendFile(path.join(__dirname, './index.html')
 // )});
 
+app.get('/getCount', countController.getCount);
+
 app.listen(PORT, () => console.log('listening on...', PORT));

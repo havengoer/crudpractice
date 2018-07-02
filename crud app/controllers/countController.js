@@ -4,10 +4,11 @@ const countController = {
   
   getCount: (req, res) => {
     //retrieve the count from db
-    //use the mongo find method
-    //chain a .then
-    //return the data to the client
-    //chain a .catch to log any errors
+    Count.find({}, (err, counter) => {
+      if (err) return err;
+      if (counter.length === 0) res.send({ count: 0 });
+      return res.send(counter[0]);
+    })
   },
 
   increaseCount: (req, res) => {
