@@ -4,14 +4,10 @@ const button = document.getElementsByClassName('btn')[0];
 
 button.addEventListener('click', () => {
   fetch('http://localhost:3000/increase', { 
-    method: 'PUT',
+    method: 'PUT'
   })
-  .then(res => {
-    res.json();
-    console.log(res);
-  })
+  .then(res => res.json())
   .then(data => {
-    console.log(data);
-    document.getElementsByClassName('number')[0].textContent = data.count.tostring();
+    document.getElementsByClassName('number')[0].textContent = data.count.toString();
   });
 })

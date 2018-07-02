@@ -10,7 +10,7 @@ const PORT = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.post('/increase', countController.increaseCount)
+app.put('/increase', countController.increaseCount)
 
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname, './index.html')
